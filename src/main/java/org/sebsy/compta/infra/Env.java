@@ -1,4 +1,4 @@
-package org.sebsy.compta;
+package org.sebsy.compta.infra;
 
 public final class Env {
 
