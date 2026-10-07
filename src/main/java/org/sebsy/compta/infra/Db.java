@@ -18,9 +18,9 @@ public class Db {
         cfg.setUsername(Env.required("DB_USER"));
         cfg.setPassword(Env.required("DB_PASSWORD"));
 
-        cfg.setMaximumPoolSize(10); // dimensionné, pas laissé au hasard
-        cfg.setConnectionTimeout(3_000); // échouer vite plutôt que pendre
-        cfg.setLeakDetectionThreshold(20_000); // dénonce les close() oubliés
+        cfg.setMaximumPoolSize(10);
+        cfg.setConnectionTimeout(3_000); // C'est cette ligne qui fait que le code s'arrète au bout de 3 secondes lorsque j'ai fermé le conteneur.
+        cfg.setLeakDetectionThreshold(20_000);
         // AutoCloseable : le pool se ferme à l'arrêt de l'application.
         return new HikariDataSource(cfg);
     }

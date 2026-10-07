@@ -19,6 +19,7 @@ public class Main {
         }catch(SQLException e)
         {
             System.err.println(e.getMessage());
+            //Le message d'erreur lors de la suppression de DB_PASSWORD est très clair. Il dis que DB_PASSWORD n'est pas le bon car il ne contient pas la valeur "app".
         }
     }
 }
